@@ -98,7 +98,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Database\DbAccess.cs" />
+    <Compile Include="Models\Database\FileDbMethod.cs" />
     <Compile Include="Models\Database\IDbMethod.cs" />
+    <Compile Include="Models\Database\UserDbMethod.cs" />
+    <Compile Include="Models\Exceptions\NodeNotFoundExceprion.cs" />
     <Compile Include="Models\Group\Group.cs" />
     <Compile Include="Models\Node\File.cs" />
     <Compile Include="Models\Node\Folder.cs" />
@@ -122,6 +125,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Models\Storage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

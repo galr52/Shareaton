@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Shareaton.Models.Database
 {
     interface IDbMethod<T>
     {
-        T GetAll();
-        T GetOneById(int id);
+        T GetOneById(Guid id);
+        void Save(T item);
+        void SaveAll(IEnumerable<T> items);
+        void Update(T item);
+        void Delete(T item);
+        void SearchByName(string name);
     }
 }
