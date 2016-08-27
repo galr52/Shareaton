@@ -94,23 +94,32 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Data\Models\Share\GroupShare.cs" />
+    <Compile Include="Data\Models\Share\Share.cs" />
+    <Compile Include="Data\Models\Share\UserShare.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Database\DbAccess.cs" />
-    <Compile Include="Models\Database\FileDbMethod.cs" />
-    <Compile Include="Models\Database\IDbMethod.cs" />
-    <Compile Include="Models\Database\UserDbMethod.cs" />
-    <Compile Include="Models\Exceptions\NodeNotFoundExceprion.cs" />
-    <Compile Include="Models\Group\Group.cs" />
-    <Compile Include="Models\Node\File.cs" />
-    <Compile Include="Models\Node\Folder.cs" />
-    <Compile Include="Models\Node\Node.cs" />
-    <Compile Include="Models\Nova\Source.cs" />
-    <Compile Include="Models\Nova\TrianglesAllow.cs" />
-    <Compile Include="Models\Nova\UserPermissions.cs" />
-    <Compile Include="Models\Nova\UserTrianglePermissions.cs" />
-    <Compile Include="Models\User\User.cs" />
+    <Compile Include="Data\DAL\Infrastructure\IGroupRepository.cs" />
+    <Compile Include="Data\DAL\Infrastructure\INodeRepository.cs" />
+    <Compile Include="Data\DAL\SqlServer\DbAccess.cs" />
+    <Compile Include="Data\DAL\Infrastructure\GenericRepository.cs" />
+    <Compile Include="Data\DAL\Infrastructure\IGenericRepository.cs" />
+    <Compile Include="Data\DAL\Infrastructure\IUserRepository.cs" />
+    <Compile Include="Data\DAL\SqlServer\GroupRepository.cs" />
+    <Compile Include="Data\DAL\SqlServer\NodeRepository.cs" />
+    <Compile Include="Data\DAL\SqlServer\UserRepository.cs" />
+    <Compile Include="Data\Exceptions\NodeNotFoundExceprion.cs" />
+    <Compile Include="Data\Models\Group\Group.cs" />
+    <Compile Include="Data\Models\Node\File.cs" />
+    <Compile Include="Data\Models\Node\Folder.cs" />
+    <Compile Include="Data\Models\Node\Node.cs" />
+    <Compile Include="Data\Models\Nova\Source.cs" />
+    <Compile Include="Data\Models\Nova\TrianglesAllow.cs" />
+    <Compile Include="Data\Models\Nova\UserPermissions.cs" />
+    <Compile Include="Data\Models\Nova\UserTrianglePermissions.cs" />
+    <Compile Include="Data\Models\User\Usage.cs" />
+    <Compile Include="Data\Models\User\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -125,7 +134,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Models\Storage\" />
+    <Folder Include="Data\Storage\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

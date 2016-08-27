@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Shareaton.Models
+namespace Shareaton.Data.Models
 {
-    public class User
+    public class Folder : Node
     {
-        public Guid Id { get; set; } = Guid.NewGuid();
     }
 }

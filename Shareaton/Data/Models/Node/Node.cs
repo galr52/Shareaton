@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Shareaton.Models
+namespace Shareaton.Data.Models
 {
     public abstract class Node
     {
