@@ -1,7 +1,8 @@
-﻿using Shareaton.Models.Nova;
+﻿using Shareaton.Data.Models;
+using Shareaton.Data.Models.Nova;
 using System.Data.Entity;
 
-namespace Shareaton.Models.Database
+namespace Shareaton.Data.DAL.SqlServer
 {
     public class DbAccess : DbContext
     {
