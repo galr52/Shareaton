@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 
@@ -16,10 +17,10 @@ namespace Shareaton.Data.DAL.Infrastructure
             set { _entities = value; }
         }
 
-        public virtual IQueryable<T> GetAll()
+        public virtual List<T> GetAll()
         {
 
-            IQueryable<T> query = _entities.Set<T>();
+            List<T> query = _entities.Set<T>().ToList();
             return query;
         }
 
@@ -33,16 +34,19 @@ namespace Shareaton.Data.DAL.Infrastructure
         public virtual void Add(T entity)
         {
             _entities.Set<T>().Add(entity);
+            Save();
         }
 
         public virtual void Delete(T entity)
         {
             _entities.Set<T>().Remove(entity);
+            Save();
         }
 
         public virtual void Edit(T entity)
         {
             _entities.Entry(entity).State = EntityState.Modified;
+            Save();
         }
 
         public virtual void Save()

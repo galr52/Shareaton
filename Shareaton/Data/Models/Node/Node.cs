@@ -11,7 +11,9 @@ namespace Shareaton.Data.Models
         public string Name { get; set; }
         public string Location { get; set; }
         public virtual Node Parent { get; set; }
+        [Column(TypeName = "DateTime2")]
         public DateTime Creation { get; set; }
+        [Column(TypeName = "DateTime2")]
         public DateTime Modify { get; set; }
     }
 }
