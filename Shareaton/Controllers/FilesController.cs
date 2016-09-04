@@ -1,6 +1,7 @@
 ﻿using Shareaton.Data.DAL.Infrastructure;
 using Shareaton.Data.DAL.SqlServer;
 using Shareaton.Data.Models;
+using Shareaton.Data.UserOperations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,10 +15,12 @@ namespace Shareaton.Controllers
     public class FilesController : ApiController
     {
         private NodeRepository filesRepository;
+        private User user;
 
         public FilesController()
         {
             this.filesRepository = new NodeRepository();
+            this.user = Data.Models.User.GetCurrentUser();
         }
 
         public FilesController(NodeRepository filesRepository)

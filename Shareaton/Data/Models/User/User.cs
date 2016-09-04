@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Shareaton.Data.Authentication;
+using Shareaton.Data.DAL.SqlServer;
+using Shareaton.Data.UserOperations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,5 +21,21 @@ namespace Shareaton.Data.Models
         public virtual Folder Root_Folder { get; set; }
         public virtual List<Node> Shared_Nodes { get; set; }
         public virtual List<Node> Groups { get; set; }
+
+        internal static User GetCurrentUser()
+        {
+            User adfsUser = ADFS.GetUser();
+            User currentUser = null;
+
+            using (UserRepository userRepository = new UserRepository())
+            {
+                currentUser = userRepository.FindBy(x => x.UniqueId.ToLower().Equals(adfsUser.UniqueId.ToLower())).FirstOrDefault();
+            }
+
+            if (currentUser == null)
+                currentUser = UserGenerator.GenerateNewUser(adfsUser);
+
+            return currentUser;
+        }
     }
 }

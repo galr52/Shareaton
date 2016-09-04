@@ -95,9 +95,11 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\FilesController.cs" />
+    <Compile Include="Data\Authentication\ADFS.cs" />
     <Compile Include="Data\Models\Share\GroupShare.cs" />
     <Compile Include="Data\Models\Share\Share.cs" />
     <Compile Include="Data\Models\Share\UserShare.cs" />
+    <Compile Include="Data\UserOperations\UserGenerator.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
