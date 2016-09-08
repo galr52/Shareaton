@@ -24,7 +24,16 @@ namespace Shareaton.Data.Authentication
         private ADFS()
         {
             claims = new Dictionary<string, string>();
+            ImportClaimsDebug();
             ImportClaims();
+        }
+
+        private void ImportClaimsDebug()
+        {
+            claims.Add(UNIQUE_ID, "MyUniqueId");
+            claims.Add(FIRST_NAME, "Gal2");
+            claims.Add(LAST_NAME, "Rotem");
+            claims.Add(HIRARCHY, "Hirarchy");
         }
 
         private void ImportClaims()

@@ -25,7 +25,8 @@ namespace Shareaton.Data.UserOperations
                 Name = adfsUser.Name,
                 UniqueId = adfsUser.UniqueId,
                 Hierarchy = adfsUser.Hierarchy,
-                Root_Folder = rootFolder
+                Root_Folder = rootFolder,
+                Usage= new Usage()
             };
 
             using (UserRepository userRepository = new UserRepository())
